@@ -3,6 +3,9 @@ Heads-up: this project is still in early developement stages.
 
 TyperCoach is a Python-based typing speed improvement tool designed to help users enhance their typing skills efficiently. Built using Python's Textual library, the program provides a user-friendly terminal interface, offering an intuitive experience for users to practice and enhance their typing speed.
 
+![screenshot](screenshots/screenshot.png)
+
+
 ## Requirements
 
 - Python 3.7+
