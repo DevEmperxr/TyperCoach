@@ -23,6 +23,8 @@ class ResultScreen(Screen):
     CSS_PATH="ResultScreen.tcss"
     BINDINGS = [("d", "toggle_dark", "Toggle dark mode") ,("escape", "app.pop_screen('resultscreen')", "Pop Screen")]
 
+
+
     def compose(self) -> ComposeResult:
         """Create child widgets for the analytics screen."""
         yield Header()
@@ -50,20 +52,10 @@ class ResultScreen(Screen):
 
 
 
-
-
-
-
-
-
-
-
-
-
 class GameScreen(Screen):
     "The Gameplay screen"
     CSS_PATH="GameScreen.tcss"
-    BINDINGS = [("d", "toggle_dark", "Toggle dark mode") ,("escape", "app.pop_screen('gamescreen')", "Pop Screen")]
+    BINDINGS = [("escape", "app.pop_screen('gamescreen')", "Back To Main Menu") ,("d", "toggle_dark", "Toggle Dark Mode") ]
 
     def compose(self) -> ComposeResult:
         """Create child widgets for the game screen."""
@@ -75,13 +67,18 @@ class GameScreen(Screen):
             Container( Input(placeholder="type here...", id="userInput"), classes="inputContainer" ),
             classes="containerGame"
         ) 
+        yield Footer()
 
 
 class TypingCoach(App):
     """An app to help you typer faster."""
     CSS_PATH="MainScreen.tcss"
-    BINDINGS = [("d", "toggle_dark", "Toggle dark mode") ,("g", "push_screen('gamescreen')", "GameScreen") , ("h", "push_screen('resultscreen')", "ResultScreen")]
-    SCREENS = {"gamescreen": GameScreen() , "resultscreen" : ResultScreen()}
+    BINDINGS = [("d", "toggle_dark", "Toggle dark mode")]
+    
+    def on_button_pressed(self, event: Button.Pressed) -> None:
+        """Event handler called when start button is pressed."""
+        if event.button.id == "gameStartButton":
+            self.push_screen(GameScreen())
 
 
     def compose(self) -> ComposeResult:

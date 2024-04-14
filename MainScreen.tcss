@@ -2,9 +2,31 @@
     align: center middle;
 }
 
+
 #description{
     margin: 3;
 }
 #mainTitle {
     border: solid $success;
 }
+
+
+Footer {
+    background: $primary-background ;
+
+}
+
+Footer > .footer--key {
+    background:$success
+    
+}
+
+Footer > .footer--highlight {
+    background:$secondary;
+}
+
+Footer > .footer--highlight-key {
+    background:$success;
+}
+
+
