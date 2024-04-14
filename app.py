@@ -1,8 +1,13 @@
 from textual.app import App, ComposeResult 
 from textual.screen import Screen
+from textual.reactive import reactive
 from textual.containers import Container , Center, ScrollableContainer
 from textual.widgets import Header, Footer , Button , Static, Label , Input , Digits, DataTable
 import art
+import keyboard
+import time
+
+
 
 ROWS = [
     ("lane", "swimmer", "country", "time"),
@@ -56,18 +61,24 @@ class GameScreen(Screen):
     "The Gameplay screen"
     CSS_PATH="GameScreen.tcss"
     BINDINGS = [("escape", "app.pop_screen('gamescreen')", "Back To Main Menu") ,("d", "toggle_dark", "Toggle Dark Mode") ]
+    words = ["happy" , "sad" , "bad" , "meets" , "evil"] 
 
+ 
+
+    
     def compose(self) -> ComposeResult:
         """Create child widgets for the game screen."""
         yield Header()
         yield Digits("100000" , id="timer")
         yield Container(
             Label("Type this:" , id="Instruction"),
-            Label("word" , id="gameWord"),
+            Label(self.writtenWord , id="gameWord"),
             Container( Input(placeholder="type here...", id="userInput"), classes="inputContainer" ),
             classes="containerGame"
         ) 
         yield Footer()
+
+
 
 
 class TypingCoach(App):
