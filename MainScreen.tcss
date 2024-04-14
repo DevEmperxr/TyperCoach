@@ -1,0 +1,10 @@
+#mainContainer{
+    align: center middle;
+}
+
+#description{
+    margin: 3;
+}
+#mainTitle {
+    border: solid $success;
+}

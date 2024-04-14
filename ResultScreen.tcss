@@ -1,0 +1,37 @@
+#score {
+    text-align: center;
+    width:80%;
+    padding: 1;
+    border: solid green;
+}
+#statsTitle{
+    text-align: center;
+    width:80%;
+    padding: 1
+}
+#statsContainer{
+    layout: horizontal;
+    border: solid green;
+    height: 50%;
+}
+
+#tableScrollContainer{
+    width: 50%;
+    align: center top;
+}
+
+#table{
+    width: auto;
+}
+#wpmContainer {
+    align: center middle;
+    height:100%;
+}
+#wmp{
+    border: solid $primary;
+    width: 60%;
+    text-align:center;
+    padding: 1;
+
+    
+}

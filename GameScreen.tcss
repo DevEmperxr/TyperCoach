@@ -1,0 +1,35 @@
+#timer {
+    align: center top;
+    text-align: center;
+}
+.containerGame{
+    align: center middle;
+}
+
+#Instruction {
+    width: 40%;
+    text-align: center;
+    
+}
+
+#gameWord{
+    width: 40%;
+    text-align: center;
+    padding: 2;
+    border: solid green;
+}
+.inputContainer {
+    width: 40%;
+    height: auto;
+    align: center top;
+    padding: 0;
+    margin: 0;
+}
+
+#userInput {
+    width: 40%; 
+    border: solid $primary;
+    background: $surface;
+    text-align: center;
+    margin: 0;
+}
